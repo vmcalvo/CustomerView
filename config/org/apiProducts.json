@@ -1,0 +1,17 @@
+[
+    {
+        "name": "pruebaproduct${entity.suffix}-v1-api-product",
+        "displayName": "pruebaproduct${entity.suffix}-v1-api-product",
+        "approvalType": "auto",
+        "environments": [
+            "${apigee.env}"
+        ],
+        "proxies": [
+            "testciapiproxy${deployment.suffix}-v1"
+        ],
+        "quota": "10000",
+        "quotaInterval": "1",
+        "quotaTimeUnit": "month",
+        "scopes": []
+    }
+]

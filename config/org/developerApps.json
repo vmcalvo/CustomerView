@@ -1,0 +1,9 @@
+{
+    "john.doe@acme.com": [{
+        "apiProducts": [
+            "pruebaproduct${entity.suffix}-v1-api-product"
+        ],
+        "name": "testciapiproxy${entity.suffix}-v1-app",
+        "scopes": []
+    }]
+}
