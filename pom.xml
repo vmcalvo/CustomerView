@@ -44,7 +44,7 @@
 		<skipNode>true</skipNode>
 		<test.scheme>http</test.scheme>
 		<!-- <test.domain>${apigee.org}-${apigee.env}.apigee.net/book${deployment.suffix}/v1</test.domain> -->
-		<test.domain>api.apigee-${env}.shared-nonprod.cloud.si.orange.es/customerView${deployment.suffix}/v2</test.domain>		
+		<test.domain>api.apigee-${apigee.env}.shared-nonprod.cloud.si.orange.es/customerView${deployment.suffix}/v2</test.domain>		
 	</properties>
 	<profiles>
 		<profile>
