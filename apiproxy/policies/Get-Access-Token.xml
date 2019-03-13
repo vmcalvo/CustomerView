@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<KeyValueMapOperations async="false" continueOnError="false" enabled="true" name="Get-Access-Token" mapIdentifier="ConsumerKeyStore">
+    <DisplayName>Get Access Token</DisplayName>
+    <Properties/>
+    <ExpiryTimeInSecs>600</ExpiryTimeInSecs>
+    <Get assignTo="var_access_token" index="1">
+        <Key>
+            <Parameter ref="request.header.z-app"/>
+        </Key>
+    </Get>
+</KeyValueMapOperations>

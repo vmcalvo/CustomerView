@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<Manifest name="manifest">
+    <Policies>
+        <VersionInfo resourceName="Endpoint" version="SHA-512:2a2251f4886a1afa9533baa0182619c4c7bf1cccbb2470ec6c17194fdc6cc277962c7676d255e46c515c3d5931c88c880b8fd9a7b1dc8ee523e9a1501fbd1276"/>
+        <VersionInfo resourceName="Flow-Callout-Header" version="SHA-512:aceacaa04ca91b7393dcffcb4f0e6ecbe1451492b9a596832edec574d7aad7572744455be18ac07b95d58a66a5a27c3a32cac44baccfd81d9f6ee4b97c2d6439"/>
+        <VersionInfo resourceName="Flow-Callout-JWT" version="SHA-512:56d06fe6bab52a069a374ff827dceb97cc0703cbe62d36456975c6bbacb4beb257dbd1bfc6316ac7d67d540bc5ba325a2723ca62b6f4638a020db9271fceadb0"/>
+        <VersionInfo resourceName="Flow-Callout-JWT-Oauth" version="SHA-512:519b09e3ae3f2f0f78a710ef3758b2351fc61a463f2580134706ba112426cbef1f5db03066eb9cabc89348e4e5639f61584e1d594ae706121264cb7c13e9b221"/>
+        <VersionInfo resourceName="Get-Access-Token" version="SHA-512:ac11d695762d9c26325c4cb3d20b8d5806b25378ef6a43edb707ac8665d16ae7ea33b2acc95f07a08d558e772970b27943eef245cbd63f6e0ed125c7a2992ac3"/>
+        <VersionInfo resourceName="LogPolicy" version="SHA-512:114946ffe76451b882fa35112bb82f81f3b662d59a5d0b7d7d4e1070208b767e5624f545e74b3b38e41b744de9daf1413e2d5daf9d723f089f3e1e92233cac97"/>
+        <VersionInfo resourceName="LogPolicy2" version="SHA-512:964ed5fa6305f86ae2f4fbee0f6abc47e8f1239545d8c372e9fa411276cf8a208ece88b2ce13d68fd019d76ae3cd39aad77fd7b3728ba94c8d656cedafd8648b"/>
+        <VersionInfo resourceName="Verify-API-Key" version="SHA-512:79d32c4f0eb39c83254b8d6a54132dcd49f8b9b1bed90377f23f101ddf0be9846781ad233c9bbffa27d974b51b1bfce66f15b7b9bae9558a669974e8d6a19dc1"/>
+        <VersionInfo resourceName="Verify-OAuth-20-me" version="SHA-512:ee1b3846721b195a77edc12387d02c4246f309dd76e7682da780b12ec057831477f4d99a132ca2e736d57cff2d1140a8eaffab4f30d802beec8946e5a8b728a1"/>
+        <VersionInfo resourceName="Verify-Oauth2-Access-Token-default" version="SHA-512:2e36446f595f768f6a24f0e055507afcef5bfedd13d3f59b9d1ab9f401889013a08c233f37533be4094fda8430be133fcad75ff7aea6f621a24b7de076d9e9ac"/>
+        <VersionInfo resourceName="add-cors" version="SHA-512:08cc2ef69b08ee73467f7be74960047faa490fcc61ebba744cc1436358ed8068b052ee8c6e101ad00a5d54633c92d8195f7ed624372a59614265f0e515a1b5a1"/>
+        <VersionInfo resourceName="remove-header-authorization" version="SHA-512:f89820dcc7147902486bd124ff45c7bb31dcd87e0e41a33d3b161b8b561dc35673d93ceba847c00c4fb0d7de657be90bc2952acec57d60425e4f11ee8dd59d4e"/>
+        <VersionInfo resourceName="verify-oauth-v2-access-token" version="SHA-512:287f71972e680495c04286bb05f6cd1698481849b442abe30e7236485138e0f455175a55503775041ae68a3ba6cdfed82a3a6ce45b56a40bf266c7e1a196aeb3"/>
+    </Policies>
+    <ProxyEndpoints>
+        <VersionInfo resourceName="default" version="SHA-512:4ad4024aba103da1aabdfc61eede8ced5579b0988fc5792de9d21a0d0c360801365f2cc3e5d89c2533f348d2546ff37bfb00d3196c26dac738b5e052e94b3dd2"/>
+        <VersionInfo resourceName="oauthapp" version="SHA-512:022a5617ada8b68680b3101e8c6c9c1e4ce2c5ef9e0a9886259872f9edc317ab963802d9e55558248b23cd34156f56d263db2a6501ee7bc35b5b0d28ddd0a96b"/>
+    </ProxyEndpoints>
+    <Resources>
+        <VersionInfo resourceName="jsc://Endpoint.js" version="SHA-512:88e143ffa4c5f0d0c4dbe0c934b704b07fe242e86633598aa27e383bab7fe18dcdd7a533be144439590d7ddc0fa7f5e15c9e07316332a62d3364d8f4534a09f5"/>
+        <VersionInfo resourceName="openapi://association.json" version="SHA-512:c3ffd2d9eb07b60706a271a0692f41d61034f103c40be2f66ea4a802b26ed6d035fb1a5153041304700c0cee6230ae2e5e41a9f42f7a9e22c6de1ce04a8ce658"/>
+    </Resources>
+    <SharedFlows/>
+    <TargetEndpoints>
+        <VersionInfo resourceName="default" version="SHA-512:bdb0d8397c5f0483223d77936bd65fc7fb1be7b689ab3d46a3e2bdf09f23d37fcfa2a253dc0f67a2cf2f135dcbf76d61e95c293b5eff28586948dfa87ad3b901"/>
+    </TargetEndpoints>
+</Manifest>

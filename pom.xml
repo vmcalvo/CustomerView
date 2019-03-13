@@ -4,9 +4,9 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>apigee</groupId>
-	<artifactId>testciapiproxy-v1</artifactId>
+	<artifactId>CustomerView-v2</artifactId>
 	<version>-</version>
-	<name>testciapiproxy${deployment.suffix}-v1</name>
+	<name>CustomerView${deployment.suffix}-v2</name>
 	<packaging>pom</packaging>
 	<pluginRepositories>
 		<pluginRepository>
@@ -28,23 +28,23 @@
 		<org.slf4j.simpleLogger.defaultLogLevel>info</org.slf4j.simpleLogger.defaultLogLevel>
 		<project.root.dir>${basedir}</project.root.dir>
 		<target.root.dir>${basedir}/target</target.root.dir>
-		<apigee.hosturl>https://api.enterprise.apigee.com</apigee.hosturl>
+		<apigee.hosturl>https://mgmt.apigee.shared-nonprod.cloud.si.orange.es</apigee.hosturl>
 		<apigee.apiversion>v1</apigee.apiversion>
 		<apigee.username>${username}</apigee.username>
 		<apigee.password>${password}</apigee.password>
 		<apigee.org>${org}</apigee.org>
 		<apigee.env>${env}</apigee.env>
 		<apigee.config.dir>${target.root.dir}/config</apigee.config.dir>
-		<apigee.options>update</apigee.options>
+		<apigee.options>override</apigee.options>
 		<apigee.config.options>update</apigee.config.options>
 		<apigee.config.exportDir>${project.root.dir}</apigee.config.exportDir>
 		<description>${name}${description.suffix}</description>
 		<deployment.suffix>-${user.name}</deployment.suffix>
 		<entity.suffix>${deployment.suffix}</entity.suffix>
 		<skipNode>true</skipNode>
-		<test.scheme>https</test.scheme>
+		<test.scheme>http</test.scheme>
 		<!-- <test.domain>${apigee.org}-${apigee.env}.apigee.net/book${deployment.suffix}/v1</test.domain> -->
-		<test.domain>${apigee.org}-${apigee.env}.apigee.net/v0</test.domain>
+		<test.domain>api.apigee-${env}.shared-nonprod.cloud.si.orange.es/customerView${deployment.suffix}/v2</test.domain>		
 	</properties>
 	<profiles>
 		<profile>
@@ -281,7 +281,8 @@
 						<goals>
 							<goal>exec</goal>
 						</goals>
-						<phase>process-sources</phase>
+						<!-- <phase>process-sources</phase> -->
+						<phase>none</phase>
 						<configuration>
 							<executable>npm</executable>
 							<workingDirectory>test/unit</workingDirectory>

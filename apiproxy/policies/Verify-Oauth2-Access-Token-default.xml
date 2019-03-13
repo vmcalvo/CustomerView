@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<OAuthV2 async="false" continueOnError="false" enabled="true" name="Verify-Oauth2-Access-Token-default">
+    <DisplayName>Verify Oauth2 Access Token default</DisplayName>
+    <ExternalAuthorization>false</ExternalAuthorization>
+    <Operation>VerifyAccessToken</Operation>
+    <AccessToken>var_access_token</AccessToken>
+</OAuthV2>

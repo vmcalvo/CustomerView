@@ -7,7 +7,7 @@
             "${apigee.env}"
         ],
         "proxies": [
-            "testciapiproxy${deployment.suffix}-v1"
+            "CustomerView${deployment.suffix}-v2"
         ],
         "quota": "10000",
         "quotaInterval": "1",

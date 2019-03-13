@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<MessageLogging name="LogPolicy2">
+    <File>
+        <Message>"date/time":"{system.time.year}-{system.time.month}-{system.time.day} {system.time.hour}:{system.time.minute}:{system.time.second}" This is a test message from API CustomerView 2</Message>
+        <FileName>CustomerView.log</FileName>
+        <FileRotationOptions rotateFileOnStartup="true">
+            <FileRotationType>SIZE</FileRotationType>
+            <MaxFileSizeInMB>10</MaxFileSizeInMB>
+            <MaxFilesToRetain>10</MaxFilesToRetain>
+        </FileRotationOptions>
+    </File>
+    <logLevel>ERROR</logLevel>
+</MessageLogging>

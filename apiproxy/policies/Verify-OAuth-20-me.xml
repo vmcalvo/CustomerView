@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<OAuthV2 async="false" continueOnError="false" enabled="true" name="Verify-OAuth-20-me">
+    <DisplayName>Verify Oauth 2.0 me</DisplayName>
+    <ExternalAuthorization>false</ExternalAuthorization>
+    <Operation>VerifyAccessToken</Operation>
+    <Scope>CV.me</Scope>
+    <GenerateResponse enabled="true"/>
+</OAuthV2>

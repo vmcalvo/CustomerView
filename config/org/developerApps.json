@@ -3,7 +3,7 @@
         "apiProducts": [
             "pruebaproduct${entity.suffix}-v1-api-product"
         ],
-        "name": "testciapiproxy${entity.suffix}-v1-app",
+        "name": "CustomerView${entity.suffix}-v2-app",
         "scopes": []
     }]
 }

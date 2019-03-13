@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<APIProxy revision="9" name="CustomerView">
+    <Basepaths>/customerView/api/v2</Basepaths>
+    <ConfigurationVersion majorVersion="4" minorVersion="0"/>
+    <CreatedAt>1544449724439</CreatedAt>
+    <CreatedBy>apigee@orange.com</CreatedBy>
+    <Description>This API retrieve the base data to build customer 360? views : basic customer information and contact methods, their owned contracts and commitments, the last bill information, etc.
+Only the basic information of these objects can be found in this API, to get access to the detailed objects (with all the information), the REST hyperlinking principles have to be used (using resource IDs).</Description>
+    <DisplayName>CustomerView</DisplayName>
+    <LastModifiedAt>1552388497018</LastModifiedAt>
+    <LastModifiedBy>apigee@orange.com</LastModifiedBy>
+    <ManifestVersion>SHA-512:ed65ecaec9f81cdc6040efbdd61e4deab3f5aeeb09e0098b711ea9365f84e833c1cf6cf1e4f7bcc54d0ce2bea9f4d1b3824ae66f62152b415efacf7b4d3a262b</ManifestVersion>
+    <Policies>
+        <Policy>Endpoint</Policy>
+        <Policy>Flow-Callout-Header</Policy>
+        <Policy>Flow-Callout-JWT-Oauth</Policy>
+        <Policy>Flow-Callout-JWT</Policy>
+        <Policy>Get-Access-Token</Policy>
+        <Policy>LogPolicy</Policy>
+        <Policy>LogPolicy2</Policy>
+        <Policy>Verify-API-Key</Policy>
+        <Policy>Verify-OAuth-20-me</Policy>
+        <Policy>Verify-Oauth2-Access-Token-default</Policy>
+        <Policy>add-cors</Policy>
+        <Policy>remove-header-authorization</Policy>
+        <Policy>verify-oauth-v2-access-token</Policy>
+    </Policies>
+    <ProxyEndpoints>
+        <ProxyEndpoint>default</ProxyEndpoint>
+        <ProxyEndpoint>oauthapp</ProxyEndpoint>
+    </ProxyEndpoints>
+    <Resources>
+        <Resource>openapi://association.json</Resource>
+        <Resource>jsc://Endpoint.js</Resource>
+    </Resources>
+    <Spec>http://artifactsrepository-soe-tc.shared-noprod.cloud.si.orange.es/nexus/service/local/repositories/openapiosp-thirdparties/content/apigee/apigee/one/apigee-one.json</Spec>
+    <TargetServers/>
+    <TargetEndpoints>
+        <TargetEndpoint>default</TargetEndpoint>
+    </TargetEndpoints>
+</APIProxy>
