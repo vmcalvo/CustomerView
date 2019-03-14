@@ -12,13 +12,38 @@ pipeline {
         }
 		stage('JsCode Quality'){
             steps {
-                bat "mvn jshint:lint@validate-proxy-sources"
+                bat "mvn com.cj.jshintmojo:jshint-maven-plugin:1.6.0:lint@validate-proxy-sources"
             }
         }
 		stage('JsUnit Test'){
             steps {
-                bat "mvn exec:exec@install-unit-tests-node-packages"
-				//bat "mvn exec:exec@run-unit-tests"
+                bat "mvn org.codehaus.mojo:exec-maven-plugin:1.6.0@install-unit-tests-node-packages"
+				//bat "mvn org.codehaus.mojo:exec-maven-plugin:1.6.0@run-unit-tests"
+            }
+        }
+		stage('Copy Resources'){
+            steps {
+                bat "mvn org.apache.maven.plugins:maven-resources-plugin:2.6:copy-resources@copy-resources"
+            }
+			
+        }
+		stage('CreateConfig'){
+            steps {
+                script {
+                    // feature branches are deployed to environment used for development
+                    if(env.BRANCH_NAME.startsWith('feature')) {
+                        profile = 'feature'
+                    } else  {
+                        profile = env.BRANCH_NAME    
+                    }
+                }
+                withCredentials([[$class: 'UsernamePasswordMultiBinding', credentialsId: 'apigeeAIO-credentials',
+                            usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD']]) {     
+                     configFileProvider([configFile(fileId: 'apigee-settings-orange', variable: 'APIGEE_SETTINGS')]) {
+                        bat "mvn org.apache.maven.plugins:maven-resources-plugin:2.6:copy-resources@copy-resources -s${APIGEE_SETTINGS} -P${profile} -Dusername=${USERNAME} -Dpassword=${PASSWORD}"
+                    }
+ 
+                }
             }
         }
         stage('Deploy And Test'){
