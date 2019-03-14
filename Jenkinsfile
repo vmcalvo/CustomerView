@@ -40,7 +40,7 @@ pipeline {
                 withCredentials([[$class: 'UsernamePasswordMultiBinding', credentialsId: 'apigeeAIO-credentials',
                             usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD']]) {     
                      configFileProvider([configFile(fileId: 'apigee-settings-orange', variable: 'APIGEE_SETTINGS')]) {
-                        bat "mvn org.apache.maven.plugins:maven-resources-plugin:2.6:copy-resources@copy-resources -s${APIGEE_SETTINGS} -P${profile} -Dusername=${USERNAME} -Dpassword=${PASSWORD}"
+                        bat "mvn com.apigee.edge.config:apigee-config-maven-plugin:1.2.1:caches@create-config-cache -s${APIGEE_SETTINGS} -P${profile} -Dusername=${USERNAME} -Dpassword=${PASSWORD}"
                     }
  
                 }
