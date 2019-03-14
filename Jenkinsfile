@@ -41,6 +41,8 @@ pipeline {
                             usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD']]) {     
                      configFileProvider([configFile(fileId: 'apigee-settings-orange', variable: 'APIGEE_SETTINGS')]) {
                         bat "mvn com.apigee.edge.config:apigee-config-maven-plugin:1.2.1:caches@create-config-cache -s${APIGEE_SETTINGS} -P${profile} -Dusername=${USERNAME} -Dpassword=${PASSWORD}"
+						bat "mvn com.apigee.edge.config:apigee-config-maven-plugin:1.2.1:kvms@create-config-cache -s${APIGEE_SETTINGS} -P${profile} -Dusername=${USERNAME} -Dpassword=${PASSWORD}"
+						bat "mvn com.apigee.edge.config:apigee-config-maven-plugin:1.2.1:targetservers@create-config-cache -s${APIGEE_SETTINGS} -P${profile} -Dusername=${USERNAME} -Dpassword=${PASSWORD}"
                     }
  
                 }
