@@ -5,6 +5,11 @@ pipeline {
         nodejs "nodejs-10.x"
     }
     stages {
+		stage('Clean'){
+            steps {
+                bat "mvn clean:clean"
+            }
+        }
         stage('Deploy And Test'){
             steps {
                 script {
