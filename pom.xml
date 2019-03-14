@@ -38,7 +38,7 @@
 		<apigee.options>override</apigee.options>
 		<apigee.config.options>update</apigee.config.options>
 		<apigee.config.exportDir>${project.root.dir}</apigee.config.exportDir>
-		<description>${name}${description.suffix}</description>
+		<description>${project.name}${description.suffix}</description>
 		<deployment.suffix>-${user.name}</deployment.suffix>
 		<entity.suffix>${deployment.suffix}</entity.suffix>
 		<skipNode>true</skipNode>
@@ -281,7 +281,7 @@
 						<goals>
 							<goal>exec</goal>
 						</goals>
-						<phase>none</phase>
+						<phase>process-sources</phase>
 						<configuration>
 							<executable>npm</executable>
 							<workingDirectory>test/unit</workingDirectory>
