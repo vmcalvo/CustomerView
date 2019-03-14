@@ -294,8 +294,7 @@
 						<goals>
 							<goal>exec</goal>
 						</goals>
-						<!-- <phase>process-sources</phase> -->
-						<phase>none</phase>
+						<phase>process-sources</phase>
 						<configuration>
 							<executable>node</executable>
 							<workingDirectory>test/unit</workingDirectory>

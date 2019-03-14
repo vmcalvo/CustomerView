@@ -10,7 +10,7 @@ pipeline {
                 bat "mvn clean:clean"
             }
         }
-		stage('Code Quality'){
+		stage('JsCode Quality'){
             steps {
                 bat "mvn jshint:lint@validate-proxy-sources"
             }
