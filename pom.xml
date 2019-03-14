@@ -281,7 +281,6 @@
 						<goals>
 							<goal>exec</goal>
 						</goals>
-						<!-- <phase>process-sources</phase> -->
 						<phase>none</phase>
 						<configuration>
 							<executable>npm</executable>
