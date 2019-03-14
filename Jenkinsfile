@@ -15,6 +15,12 @@ pipeline {
                 bat "mvn jshint:lint@validate-proxy-sources"
             }
         }
+		stage('JsUnit Test'){
+            steps {
+                bat "mvn exec:exec@install-unit-tests-node-packages"
+				bat "mvn exec:exec@run-unit-tests"
+            }
+        }
         stage('Deploy And Test'){
             steps {
                 script {
