@@ -17,8 +17,8 @@ pipeline {
         }
 		stage('JsUnit Test'){
             steps {
-                bat "mvn org.codehaus.mojo:exec-maven-plugin:1.6.0@install-unit-tests-node-packages"
-				//bat "mvn org.codehaus.mojo:exec-maven-plugin:1.6.0@run-unit-tests"
+                bat "mvn org.codehaus.mojo:exec-maven-plugin:1.6.0:exec@install-unit-tests-node-packages"
+				//bat "mvn org.codehaus.mojo:exec-maven-plugin:1.6.0:exec@run-unit-tests"
             }
         }
 		stage('Copy Resources'){
