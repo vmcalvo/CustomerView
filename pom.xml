@@ -214,7 +214,7 @@
 									def appName = apps[developerEmail][0].name
 									println(appName)
 									def appDetails = keys.find { it.name == appName }
-									println(it.name)
+									println(name)
 									println(appDetails)
 									project.properties.setProperty('test.consumerKey', appDetails.credentials[0].consumerKey)
 									project.properties.setProperty('test.consumerSecret', appDetails.credentials[0].consumerSecret)
