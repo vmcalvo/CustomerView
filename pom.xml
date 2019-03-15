@@ -204,11 +204,18 @@
 									def keysFile = new File(exportDir, 'devAppKeys.json')
 									def jsonSlurper = new groovy.json.JsonSlurper() 
 									def developers = jsonSlurper.parseText(developersFile.text)
+									println(developers)
 									def apps = jsonSlurper.parseText(appsFile.text)
+									println(apps)
 									def keys = jsonSlurper.parseText(keysFile.text)
+									println(keys)
 									def developerEmail = developers[0].email
+									println(developerEmail)
 									def appName = apps[developerEmail][0].name
+									println(appName)
 									def appDetails = keys.find { it.name == appName }
+									println(it.name)
+									println(appDetails)
 									project.properties.setProperty('test.consumerKey', appDetails.credentials[0].consumerKey)
 									project.properties.setProperty('test.consumerSecret', appDetails.credentials[0].consumerSecret)
 								]]>
