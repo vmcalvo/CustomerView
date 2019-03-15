@@ -82,11 +82,11 @@ pipeline {
                 withCredentials([[$class: 'UsernamePasswordMultiBinding', credentialsId: 'apigeeAIO-credentials',
                             usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD']]) {     
                      configFileProvider([configFile(fileId: 'apigee-settings-orange', variable: 'APIGEE_SETTINGS')]) {                        
-						bat "mvn com.apigee.edge.config:apigee-config-maven-plugin:1.2.1:apiproducts@create-config-apiproduct -s${APIGEE_SETTINGS} -Dapigee.org=${org} -Dapigee.env=${enviroment} -Ddeployment.suffix=${suffix} -Dentity.suffix=${suffix} -Dusername=${USERNAME} -Dpassword=${PASSWORD}"
-						bat "mvn com.apigee.edge.config:apigee-config-maven-plugin:1.2.1:developers@create-config-developer -s${APIGEE_SETTINGS} -Dapigee.org=${org} -Dapigee.env=${enviroment} -Ddeployment.suffix=${suffix} -Dentity.suffix=${suffix} -Dusername=${USERNAME} -Dpassword=${PASSWORD}"
+						//bat "mvn com.apigee.edge.config:apigee-config-maven-plugin:1.2.1:apiproducts@create-config-apiproduct -s${APIGEE_SETTINGS} -Dapigee.org=${org} -Dapigee.env=${enviroment} -Ddeployment.suffix=${suffix} -Dentity.suffix=${suffix} -Dusername=${USERNAME} -Dpassword=${PASSWORD}"
+						//bat "mvn com.apigee.edge.config:apigee-config-maven-plugin:1.2.1:developers@create-config-developer -s${APIGEE_SETTINGS} -Dapigee.org=${org} -Dapigee.env=${enviroment} -Ddeployment.suffix=${suffix} -Dentity.suffix=${suffix} -Dusername=${USERNAME} -Dpassword=${PASSWORD}"
 						bat "mvn org.codehaus.gmavenplus:gmavenplus-plugin:1.6:execute@update-apigee-config-options -s${APIGEE_SETTINGS} -Dapigee.org=${org} -Dapigee.env=${enviroment} -Ddeployment.suffix=${suffix} -Dentity.suffix=${suffix} -Dusername=${USERNAME} -Dpassword=${PASSWORD}"
 						bat "mvn org.apache.maven.plugins:maven-install-plugin:2.4:install"
-						bat "mvn com.apigee.edge.config:apigee-config-maven-plugin:1.2.1:apps@create-config-app -s${APIGEE_SETTINGS} -Dapigee.org=${org} -Dapigee.env=${enviroment} -Ddeployment.suffix=${suffix} -Dentity.suffix=${suffix} -Dusername=${USERNAME} -Dpassword=${PASSWORD}"
+						//bat "mvn com.apigee.edge.config:apigee-config-maven-plugin:1.2.1:apps@create-config-app -s${APIGEE_SETTINGS} -Dapigee.org=${org} -Dapigee.env=${enviroment} -Ddeployment.suffix=${suffix} -Dentity.suffix=${suffix} -Dusername=${USERNAME} -Dpassword=${PASSWORD}"
 						bat "mvn com.apigee.edge.config:apigee-config-maven-plugin:1.2.1:exportAppKeys@export-app-keys -s${APIGEE_SETTINGS} -Dapigee.org=${org} -Dapigee.env=${enviroment} -Ddeployment.suffix=${suffix} -Dentity.suffix=${suffix} -Dusername=${USERNAME} -Dpassword=${PASSWORD}"
                     }
  
