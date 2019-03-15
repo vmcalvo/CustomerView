@@ -24,7 +24,7 @@ pipeline {
         }
 		stage('Copy Resources'){
             steps {
-                bat "mvn org.apache.maven.plugins:maven-resources-plugin:2.6:copy-resources@copy-resources"
+                bat "mvn org.apache.maven.plugins:maven-resources-plugin:2.6:copy-resources@copy-resources -s${APIGEE_SETTINGS} -P${profile}"
             }
 			
         }
