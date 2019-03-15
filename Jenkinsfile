@@ -21,13 +21,7 @@ pipeline {
                 //bat "mvn org.codehaus.mojo:exec-maven-plugin:1.6.0:exec@install-unit-tests-node-packages"
 				//bat "mvn org.codehaus.mojo:exec-maven-plugin:1.6.0:exec@run-unit-tests"
             }
-        }
-		stage('Copy Resources'){
-            steps {
-                bat "mvn org.apache.maven.plugins:maven-resources-plugin:2.6:copy-resources@copy-resources -s${APIGEE_SETTINGS} -P${profile}"
-            }
-			
-        }
+        }		
 		stage('CreateConfig'){
             steps {
                 script {
@@ -41,6 +35,7 @@ pipeline {
                 withCredentials([[$class: 'UsernamePasswordMultiBinding', credentialsId: 'apigeeAIO-credentials',
                             usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD']]) {     
                      configFileProvider([configFile(fileId: 'apigee-settings-orange', variable: 'APIGEE_SETTINGS')]) {
+						bat "mvn org.apache.maven.plugins:maven-resources-plugin:2.6:copy-resources@copy-resources -s${APIGEE_SETTINGS} -P${profile}"
                         bat "mvn com.apigee.edge.config:apigee-config-maven-plugin:1.2.1:caches@create-config-cache -s${APIGEE_SETTINGS} -P${profile} -Dusername=${USERNAME} -Dpassword=${PASSWORD}"
 						bat "mvn com.apigee.edge.config:apigee-config-maven-plugin:1.2.1:kvms@create-config-kvm -s${APIGEE_SETTINGS} -P${profile} -Dusername=${USERNAME} -Dpassword=${PASSWORD}"
 						bat "mvn com.apigee.edge.config:apigee-config-maven-plugin:1.2.1:targetservers@targetservers -s${APIGEE_SETTINGS} -P${profile} -Dusername=${USERNAME} -Dpassword=${PASSWORD}"						
